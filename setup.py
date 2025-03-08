@@ -18,7 +18,7 @@ setup(
     author_email = EMAIL,
     url = GITHUB_URL,
     keywords = ['bcv', 'exchange'],
-    packages=find_packages(),
+    packages=find_packages(exclude="tests"),
     install_requires=[ 
         'beautifulsoup4==4.13.3',
         'requests==2.32.3'
