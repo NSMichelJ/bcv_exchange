@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '1.0.0'
+VERSION = '1.1.0'
 DESCRIPTION = 'Unofficial Python package to retrieve official exchange rates from the Central Bank of Venezuela (BCV) website.'
 PACKAGE_NAME = 'bcv_exchange'
 AUTHOR = 'NSMichelJ'
@@ -19,6 +19,11 @@ setup(
     url = GITHUB_URL,
     keywords = ['bcv', 'exchange'],
     packages=find_packages(exclude="tests"),
+    entry_points={
+        'console_scripts': [
+            'get_bcv_exchange = bcv_exchange.command:get_bcv_exchange',
+        ]
+    },
     install_requires=[ 
         'beautifulsoup4==4.13.3',
         'requests==2.32.3'
